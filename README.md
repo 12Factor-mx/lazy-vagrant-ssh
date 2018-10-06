@@ -4,7 +4,7 @@
 
 A Vagrant user needs to ssh into just one Vagrant machine over a large list of machines.
 
-## Trys to solve
+## Tries to solve
 
 This small shell tool could be usefull in cases where the list of machines is extensive and hard to remember
 
