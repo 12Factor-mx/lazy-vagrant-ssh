@@ -59,7 +59,7 @@ say_no_machines()
   echo -e "Have you tried Vagrant init or Vagrant up?${NC}"
 }
 
-# Caugth temination signal <ctrl-c> and prints the
+# Caught temination signal <ctrl-c> and prints the
 # shell cancelation intend message
 trap 'echo -e "${NC}"; 
       echo -e "\n${BLUE}Ok, you are the Boss! quiting because a ^C was been issued...${NC}"; 
@@ -76,10 +76,10 @@ fi
 # Global variables
 let "selection=1" # index for the vagrant_machines array
 
-# Read the vagant machines names from the .vagrant folder
+# Read the vagant machine names from the .vagrant folder
 vagrant_machines=($(ls $VAGRANT_HOME/.vagrant/machines 2> /dev/null | xargs -n 1 basename 2> /dev/null)) 
 
-# If .vagarant file is empty o neither exits 
+# If .vagarant file is empty o does not exists then
 # say goodbye and quit 
 if [[ -z $vagrant_machines ]]; then
   say_no_machines
@@ -99,7 +99,7 @@ do
    ((selection++))
 done
 
-# Prompts the user to select the machine she/he wants to shh into
+# Prompts the user to select the machine she/he wants to ssh into
 echo -e ""
 read -p "Select the machine you want to ssh into: " selection_input
 echo -e "${NC}"
